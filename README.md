@@ -11,6 +11,6 @@ They can also be used to represent some kind of data
 in some bifurcating structure.
 
 
-THE FOLLOWING ARE THE TASKS DONE:
+## THE FOLLOWING ARE THE TASKS DONE:
 
 [task 0](0-binary_tree_node.c)
