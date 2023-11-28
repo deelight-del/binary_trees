@@ -2,7 +2,7 @@
 /**
  * binary_tree_postorder - This function to traverse a tree postorder.
  * @tree: The root node of the tree.
- * @func: The given function 
+ * @func: The given function
  *
  * Return: void.
  */
