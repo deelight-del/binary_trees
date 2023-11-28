@@ -1,20 +1,21 @@
 #include "binary_trees.h"
+#include <stdio.h>
 /**
- * binary_tree_height - Function that gets the height of a tree.
+ * binary_alt_height - Function that gets the height of a tree.
  * @tree: The node of the tree.
  *
  * Return: The height of a tree.
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+int binary_alt_height(const binary_tree_t *tree)
 {
-	size_t left_height, right_height;
+	int left_height, right_height;
 
 	if (tree == NULL)
-		return (0);
+		return (-1);
 	if (tree->right == NULL && tree->left == NULL)
 		return (0);
-	left_height = binary_tree_height(tree->left);
-	right_height = binary_tree_height(tree->right);
+	left_height = binary_alt_height(tree->left);
+	right_height = binary_alt_height(tree->right);
 	if (right_height >= left_height)
 		return (right_height + 1);
 	else
@@ -29,16 +30,17 @@ size_t binary_tree_height(const binary_tree_t *tree)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	binary_tree_t *left_tree, *right_tree;
-	size_t left_height, right_height;
+	int left_height, right_height;
 	int difference;
 
+	printf("Here is segfault\n");
 	if (tree == NULL)
 		return (0);
-	left_tree = tree->left;
-	right_tree = tree->right;
-	left_height = binary_tree_height(left_tree);
-	right_height = binary_tree_height(right_tree);
-	difference = ((int)left_height) - ((int)right_height);
+	printf("Here is segfault\n");
+	left_height = binary_alt_height(tree->left);
+	printf("The left height is %d\n", left_height);
+	right_height = binary_alt_height(tree->right);
+	printf("THe right height is %d\n", right_height);
+	difference = (left_height - right_height);
 	return (difference);
 }
