@@ -36,11 +36,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 	printf("Here is segfault\n");
 	if (tree == NULL)
 		return (0);
-	printf("Here is segfault\n");
 	left_height = binary_alt_height(tree->left);
-	printf("The left height is %d\n", left_height);
 	right_height = binary_alt_height(tree->right);
-	printf("THe right height is %d\n", right_height);
 	difference = (left_height - right_height);
 	return (difference);
 }
