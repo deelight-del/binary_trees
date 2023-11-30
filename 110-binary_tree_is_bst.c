@@ -34,7 +34,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return (0);
 	if (tree->right == NULL && tree->left == NULL)
 		return (1);
-	left_bst = is_bst_utils(tree->left, INT_MIN, INT_MAX);
-	right_bst = is_bst_utils(tree->right, INT_MIN, INT_MAX);
+	left_bst = is_bst_utils(tree->left, INT_MIN, tree->n);
+	right_bst = is_bst_utils(tree->right, tree->n, INT_MAX);
 	return (left_bst * right_bst);
 }
